@@ -1,0 +1,113 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,800,700,600,500,300);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+
+body {
+    background-color: rgb(69, 105, 144);
+    color: #414347;
+    font-family: "Lora", "Helvetica Neue", Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #414347;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+.container {
+   // 
+}
+header.site-head {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 2vw 6vw;
+    text-align: center;
+}
+header.site-head div {
+    display: inline-block;
+    position: relative; 
+}
+header.site-head a {
+    display: block;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: rgb(255,255,255);
+    letter-spacing: 0.1em;
+    font-weight: 900;
+    font-size: 7vw;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.post section {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin: 15% auto;
+    box-sizing: border-box;
+    min-width: 35rem;
+    max-width: 60%;
+    background: rgba(255,255,255,0.9);
+    border: 0.2rem solid rgba(255,255,255,0.9);
+}
+.post-content {
+    overflow: auto;
+    padding: 4vw;
+}
+.post-content h1 {
+    font-size: 1.6em;
+}
+.highlight {
+    font-family: "Lora", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    background: rgb(65, 67, 71);
+    color: #EEEEEE;
+    margin-bottom: 1em;
+    overflow: auto;
+}
+.highlight code {
+    font-family: monospace, monospace;
+    color: #fff;
+    display: block;
+    padding: 1em;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.6;
+    overflow: auto;
+}
+.post footer {
+    font-style: italic;
+    text-align: right;
+    margin-top: 2em;
+}
+.post aside {
+    display: flex;
+    justify-content: center;
+}
+.post aside ul {
+    display: flex;
+}
+.post aside ul li {
+    padding: 0 3rem;
+}
+.post aside ul li a {
+    display: block;
+    padding: 1rem 0rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+    border-top: 0.2rem solid #92c4d1;
+    text-align: center;
+    line-height: 2rem;
+}
