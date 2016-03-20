@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20160320022138) do
     t.string   "title"
     t.text     "body"
     t.string   "hashtag"
-    t.datetime "date"
     t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
