@@ -1,0 +1,21 @@
+<div id="form">
+  <div class="ui grid">
+    <div class="eight wide column centered">
+      <h1>New Post</h1>
+      <div class="ui form">
+         <%= form_for @post do |f| %>
+              <%= f.label :title %>:
+              <%= f.text_field :title %><br />
+
+              <%= f.label :hashtag %>:
+              <%= f.text_field :hashtag %><br />
+
+              <%= f.label :body %>:
+              <%= f.text_area :body %><br />
+
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
