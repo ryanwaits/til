@@ -10,29 +10,24 @@
     <section id="home">
         <article class="post">
             <section>
+            <% @posts.each do |post| %>
                 <div class="post-content">
                     <h1>
-                        <a href="#">Post Title</a>
+                        <a href="#"><%= post.title %></a>
                     </h1>
-                    <p>Kale chips literally dreamcatcher, butcher YOLO blog cold-pressed.</p>
-                    <p>Man bun swag vice, VHS disrupt microdosing roof party gochujang celiac intelligentsia hella hashtag normcore. Aesthetic brunch farm-to-table kombucha gentrify disrupt. Forage fanny pack four loko flannel keytar church-key.</p>
-                    <pre class="highlight plaintext">
-                        <code>
-                        code
-                        </code>
-                    </pre>
+                    <p><%= post.body %></p>
                     <footer>
                     <p>
-                    <a href="/author/jakeworth">author</a>
+                    <a href="/author/jakeworth"><%= post.author.username %></a>
                     <br>
-                    <a class="post__permalink" href="#">March 18, 2016</a>
+                    <a class="post__permalink" href="#"><%= time_ago_in_words(post.date) %> ago</a>
                     </p>
                     </footer>
                 </div>
                 <aside>
                 <ul>
                 <li>
-                <a class="post__tag-link" href="#">#sql</a>
+                <a class="post__tag-link" href="#"><%= post.hashtag %></a>
                 </li>
                 <li>
                 <a class="post__raw-link" target="_blank" href="#">view raw
@@ -46,6 +41,7 @@
                 </a></li>
                 </ul>
                 </aside>
+                <% end %>
             </section>
         </article>
     </section>
