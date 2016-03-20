@@ -9,18 +9,18 @@
 
     <section id="home">
         <article class="post">
+        <% @posts.each do |post| %>
             <section>
-            <% @posts.each do |post| %>
                 <div class="post-content">
                     <h1>
                         <a href="#"><%= post.title %></a>
                     </h1>
-                    <p><%= post.body %></p>
+                    <%= post.body.html_safe %>
                     <footer>
                     <p>
                     <a href="/author/jakeworth"><%= post.author.username %></a>
                     <br>
-                    <a class="post__permalink" href="#"><%= time_ago_in_words(post.date) %> ago</a>
+                    <a class="post__permalink" href="#"><%= time_ago_in_words(post.created_at) %> ago</a>
                     </p>
                     </footer>
                 </div>
@@ -41,8 +41,8 @@
                 </a></li>
                 </ul>
                 </aside>
-                <% end %>
             </section>
+        <% end %>
         </article>
     </section>
 </div>
