@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :posts, except: [:index]
+  resources :authors, only: [:show]
+  
+  get '/signup' => 'authors#new'
+  post '/signup' => 'authors#create'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
