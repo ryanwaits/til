@@ -17,7 +17,21 @@
 //= require_tree .
 
 $(function(){
+    // remove flash notifications after 3 seconds
     setTimeout(function(){
         $('.message').remove();
       }, 3000);
+
+    // post a like
+    $('.js-like-action').on('click', function(){
+        var post_id = $(this).data('id');
+
+        $.ajax({
+            method: 'POST',
+            url: '/like',
+            data: {
+                post_id: post_id
+            }
+        })
+    })
 })
