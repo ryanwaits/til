@@ -9,6 +9,9 @@
             <ul>
                 <% if logged_in?(@author) %>
                 <li>
+                    <%= link_to '<i class="fa fa-home"></i>'.html_safe, root_path %>
+                </li>
+                <li>
                     <%= link_to '<i class="fa fa-user"></i>'.html_safe, author_path(@author) %>
                 </li>
                 <li>
@@ -18,9 +21,15 @@
                     <a href=""><i class="fa fa-search"></i></a>
                 </li>
                 <li>
+                    <a href=""><%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_post_path %></a>
+                </li>
+                <li>
                     <%= link_to '<i class="fa fa-sign-out"></i>'.html_safe, logout_path, method: :delete %>
                 </li>
                 <% else %>
+                    <li>
+                        <%= link_to '<i class="fa fa-home"></i>'.html_safe, root_path %>
+                    </li>
                     <li>
                         <%= link_to '<i class="fa fa-user"></i>'.html_safe, login_path %>
                     </li>
