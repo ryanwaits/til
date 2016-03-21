@@ -5,6 +5,16 @@
                 <a href="#">Today I Learned</a>
             </h1>
         </div>
+        <section class="meta">
+            <ul>
+                <li>
+                    <a href=""><i class="fa fa-search"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-bar-chart"></i></a>
+                </li>
+            </ul>
+        </section>
     </header>
 
     <section id="home">
@@ -20,7 +30,7 @@
                     <p>
                     <a href="/author/jakeworth"><%= post.author.username %></a>
                     <br>
-                    <a class="post__permalink" href="#"><%= time_ago_in_words(post.created_at) %> ago</a>
+                    <a class="post__permalink" href="#"><%= post.created_at.strftime("%B %d, %Y") %></a>
                     </p>
                     </footer>
                 </div>
@@ -30,14 +40,11 @@
                 <a class="post__tag-link" href="#"><%= post.hashtag %></a>
                 </li>
                 <li>
-                <a class="post__raw-link" target="_blank" href="#">view raw
+                <a class="post__raw-link" target="_blank" href="#">save
                 </a></li>
                 <li>
-                <a class="post__permalink" href="#">permalink
-                </a></li>
-                <li>
-                <a class="js-like-action post__like-link" id="#" href="#"><span class="post__like-count">2</span>
-                <span class="post__like-label">likes</span>
+                <a class="js-like-action post__like-link" id="#" href="#"><span class="post__like-count"><i class="fa fa-heart-o"></i></span>
+                <span class="post__like-label">2</span>
                 </a></li>
                 </ul>
                 </aside>
