@@ -1,0 +1,44 @@
+<header class="site-head">
+    <div>
+        <h1>
+            <a href="#">Stats</a>
+        </h1>
+    </div>
+    <section class="meta">
+        <ul>
+            <% if logged_in?(@author) %>
+            <li>
+                <%= link_to '<i class="fa fa-user"></i>'.html_safe, author_path(@author) %>
+            </li>
+            <li>
+                <%= link_to '<i class="fa fa-bar-chart"></i>'.html_safe, stats_path, class: 'stats' %>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-search"></i></a>
+            </li>
+            <li>
+                <%= link_to '<i class="fa fa-sign-out"></i>'.html_safe, logout_path, method: :delete %>
+            </li>
+            <% else %>
+                <li>
+                    <%= link_to '<i class="fa fa-user"></i>'.html_safe, login_path %>
+                </li>
+                <li>
+                    <%= link_to '<i class="fa fa-bar-chart"></i>'.html_safe, stats_path, class: 'stats' %>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-search"></i></a>
+                </li>
+            <% end %>
+        </ul>
+    </section>
+</header>
+<section id="home">
+    <article class="post">
+        <section>
+            <div class="post-content">
+             <%= bar_chart @data, @options %>     
+            </div>
+        </section>
+    </article>
+</section>
