@@ -13,8 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require semantic-ui
+//= require Chart
+//= require excanvas
 //= require turbolinks
 //= require_tree .
+
+
 
 $(function(){
     // remove flash notifications after 3 seconds
@@ -34,4 +38,5 @@ $(function(){
             }
         })
     })
+
 })
