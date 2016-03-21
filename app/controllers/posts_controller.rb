@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {})
     @post = Post.new(post_params)
     @post.body = markdown.render(@post.body)
-    @post.author_id = 1
+    @post.author_id = session[:author_id]
     
     @post.save ? (redirect_to(root_path)) : (render 'new')
     
