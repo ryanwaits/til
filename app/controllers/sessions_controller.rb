@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
         session[:author_id] = author.id
         flash[:logged_in] = "Welcome back #{author.username}!"
         redirect_to root_path
+    elsif !author
+        flash[:account] = "You must sign up first."
+        redirect_to signup_path
     else
       flash[:logged_in] = "Your email or password was incorrect, try again."
         redirect_to login_path
