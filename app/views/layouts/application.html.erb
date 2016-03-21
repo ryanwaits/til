@@ -9,6 +9,9 @@
 </head>
 <body>
 
+<% if flash[:logged_in] %>
+    <div class="notice"><%= flash[:logged_in] %></div>
+<% end %>
 <%= yield %>
 
 </body>

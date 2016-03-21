@@ -1,3 +1,27 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header.login {
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 2vw 6vw;
+    text-align: center;
+}
+header.login div {
+    display: inline-block;
+    position: relative; 
+}
+header.login a {
+    display: block;
+    font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: rgb(255,255,255);
+    letter-spacing: 0.1em;
+    font-weight: 900;
+    font-size: 7vw;
+    line-height: 1;
+    text-decoration: none;
+}
