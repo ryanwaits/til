@@ -25,3 +25,29 @@ header.login a {
     line-height: 1;
     text-decoration: none;
 }
+article.login {
+    // margin-top: 2.5%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin: 10% auto 10% auto;
+    box-sizing: border-box;
+    min-width: 35rem;
+    max-width: 60%;
+    background: rgba(255,255,255,0.9);
+    border: 0.2rem solid rgba(255,255,255,0.9);
+}
+article.signup {
+    // margin-top: 2.5%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin: 10% auto 10% auto;
+    box-sizing: border-box;
+    min-width: 35rem;
+    max-width: 60%;
+    background: rgba(255,255,255,0.9);
+    border: 0.2rem solid rgba(255,255,255,0.9);
+}

@@ -1,30 +1,39 @@
 <header class="signup">
     <div>
         <h1>
-            <a href="#">Sign up man</a>
+            <a href="#">Sign up</a>
         </h1>
     </div>
 </header>
-<div id="form">
-  <div class="ui grid">
-    <div class="eight wide column centered">
-      <div class="ui form">
-         <%= form_for :author, url: signup_path do |f| %>
-              <%= f.label :username %>:
-              <%= f.text_field :username %><br />
 
-              <%= f.label :email %>:
-              <%= f.email_field :email %><br />
+<section id="home">
+    <article class="signup">
+        <section>
+            <div class="post-content">
+             <div id="form">
+               <div class="ui grid">
+                 <div class="eight wide column centered">
+                   <div class="ui form">
+                      <%= form_for :author, url: signup_path do |f| %>
+                           <%= f.label :username %>:
+                           <%= f.text_field :username %><br />
 
-              <%= f.label :password %>:
-              <%= f.password_field :password %><br />
+                           <%= f.label :email %>:
+                           <%= f.email_field :email %><br />
 
-              <%= f.label :password_confirmation %>:
-              <%= f.password_field :password_confirmation %><br />
+                           <%= f.label :password %>:
+                           <%= f.password_field :password %><br />
 
-          <%= f.submit %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+                           <%= f.label :password_confirmation %>:
+                           <%= f.password_field :password_confirmation %><br />
+
+                       <%= f.submit %>
+                     <% end %>
+                   </div>
+                 </div>
+               </div>
+             </div>     
+            </div>
+        </section>
+    </article>
+</section>
