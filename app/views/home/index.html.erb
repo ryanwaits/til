@@ -55,14 +55,14 @@
                 <aside>
                 <ul>
                 <li>
-                <a class="post__tag-link" href="#"><%= post.hashtag %></a>
+                <a class="hashtag" href="#"><%= post.hashtag %></a>
                 </li>
                 <li>
-                <a class="post__raw-link" target="_blank" href="#">save
+                <a class="save" target="_blank" href="#">save
                 </a></li>
                 <li>
-                <a class="js-like-action post__like-link" id="#" href="#"><span class="post__like-count"><i class="fa fa-heart-o"></i></span>
-                <span class="post__like-label">2</span>
+                <a class="js-like-action post__like-link" data-id="<%= post.id %>" href="#"><i class="fa fa-heart-o"></i>
+                <span class="like-label"><%= post.author.liked_posts.count %></span>
                 </a></li>
                 </ul>
                 </aside>
