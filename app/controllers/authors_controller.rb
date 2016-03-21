@@ -7,7 +7,13 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.create(author_params)
 
-    @author.save ? (redirect_to root_path) : (render 'new' && flash[:notice] = "Try again")
+    if @author.save
+      flash[:signup] = "Thanks for signing up <% @author.username %>"
+      redirect_to root_path
+    else
+      flash[:signup] = "Try again"
+      render 'new'
+    end
   end
 
   def show

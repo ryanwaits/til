@@ -1,4 +1,4 @@
 <% if flash[:logged_out] %>
-    <div class="notice"><%= flash[:logged_out] %></div>
+    <div class="ui compact message"><%= flash[:logged_out] %></div>
 <% end %>
 <%= render 'login_form' %>

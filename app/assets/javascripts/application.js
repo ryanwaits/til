@@ -15,3 +15,9 @@
 //= require semantic-ui
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+    setTimeout(function(){
+        $('.message').remove();
+      }, 3000);
+})

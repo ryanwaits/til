@@ -10,7 +10,10 @@
 <body>
 
 <% if flash[:logged_in] %>
-    <div class="notice"><%= flash[:logged_in] %></div>
+    <div class="ui compact message"><%= flash[:logged_in] %></div>
+<% end %>
+<% if flash[:signup] %>
+    <div class="ui compact message"><%= flash[:signup] %></div>
 <% end %>
 <%= yield %>
 
