@@ -1,0 +1,39 @@
+<h1>Welcome <%= @author.username %></h1>
+
+<% if @posts %>
+    <section id="home">
+            <article class="post">
+            <% @posts.each do |post| %>
+                <section>
+                    <div class="post-content">
+                        <h1>
+                            <a href="#"><%= post.title %></a>
+                        </h1>
+                        <%= post.body.html_safe %>
+                        <footer>
+                        <p>
+                        <a href="/author/jakeworth"><%= post.author.username %></a>
+                        <br>
+                        <a class="post__permalink" href="#"><%= post.created_at.strftime("%B %d, %Y") %></a>
+                        </p>
+                        </footer>
+                    </div>
+                    <aside>
+                    <ul>
+                    <li>
+                    <a class="post__tag-link" href="#"><%= post.hashtag %></a>
+                    </li>
+                    <li>
+                    <a class="post__raw-link" target="_blank" href="#">save
+                    </a></li>
+                    <li>
+                    <a class="js-like-action post__like-link" id="#" href="#"><span class="post__like-count"><i class="fa fa-heart-o"></i></span>
+                    <span class="post__like-label">2</span>
+                    </a></li>
+                    </ul>
+                    </aside>
+                </section>
+            <% end %>
+            </article>
+        </section>
+<% end %>

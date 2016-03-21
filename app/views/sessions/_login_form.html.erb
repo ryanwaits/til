@@ -1,0 +1,19 @@
+<div id="form">
+  <div class="ui grid">
+    <div class="eight wide column centered">
+      <h1>Log in</h1>
+      <div class="ui form">
+         <%= form_for :session, url: login_path do |f| %>
+
+              <%= f.label :email %>:
+              <%= f.email_field :email %><br />
+
+              <%= f.label :password %>:
+              <%= f.password_field :password %><br />
+
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
