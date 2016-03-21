@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'home#index'
   resources :posts, except: [:index]
   resources :authors, only: [:show]
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   post '/like' => 'likes#create'
+
+  get '/stats' => 'stats#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
