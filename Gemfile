@@ -24,6 +24,8 @@ gem 'redcarpet'
 
 gem 'chartjs-ror'
 
+gem 'numbers_in_words'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7', :require => true
 
