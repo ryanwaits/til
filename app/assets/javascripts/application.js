@@ -19,7 +19,6 @@
 //= require_tree .
 
 
-
 $(function(){
     // remove flash notifications after 3 seconds
     setTimeout(function(){
@@ -27,7 +26,9 @@ $(function(){
       }, 3000);
 
     // post a like
-    $('.js-like-action').on('click', function(){
+    current_like = 0;
+    $('.js-like-action').on('click', function(e){
+        e.preventDefault();
         var post_id = $(this).data('id');
 
         $.ajax({
@@ -37,6 +38,19 @@ $(function(){
                 post_id: post_id
             }
         })
+
+        like_count = $(this).text();
+
+        if (current_like % 2 === 0) {
+            current_like++
+            (like_count)++;
+            $(this).html("<i class='fa fa-heart' style='color: rgba(246, 32, 29, 0.9)'></i> " + like_count);
+        } else {
+            current_like--
+            like_count--
+            $(this).html("<i class='fa fa-heart-o'></i> " + like_count);
+        }
     })
+
 
 })
