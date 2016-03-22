@@ -18,7 +18,7 @@ header.login a {
     display: block;
     font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
     text-transform: uppercase;
-    color: rgb(255,255,255);
+    color: rgb(255,255,255) !important;
     letter-spacing: 0.1em;
     font-weight: 900;
     font-size: 7vw;
@@ -50,4 +50,10 @@ article.signup {
     max-width: 60%;
     background: rgba(255,255,255,0.9);
     border: 0.2rem solid rgba(255,255,255,0.9);
+}
+.ui.large.form {
+    margin: 15%;
+}
+.email-spacing {
+    margin-bottom: 2rem;
 }

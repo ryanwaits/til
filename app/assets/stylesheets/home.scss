@@ -10,10 +10,12 @@ body {
     color: #414347;
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
+    font-size: 14px;
 }
 a {
     text-decoration: none;
-    color: #414347;
+    font-size: 1.25em;
+    color: rgba(246, 32, 29, 0.9) !important;
 }
 ul {
     padding: 0;
@@ -50,7 +52,7 @@ header.site-head a {
     display: block;
     font-family: "Raleway", "Helvetica Neue", Helvetica, sans-serif;
     text-transform: uppercase;
-    color: rgb(255,255,255);
+    color: rgb(255,255,255) !important;
     letter-spacing: 0.1em;
     font-weight: 900;
     font-size: 7vw;
@@ -93,6 +95,9 @@ section.meta a {
     font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
 }
+.post-content a {
+    color: rgb(51, 47, 47) !important;
+}
 .highlight {
     font-family: "Lora", "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 400;
@@ -105,6 +110,9 @@ section.meta a {
     font-style: italic;
     text-align: right;
     margin-top: 2em;
+}
+.post footer p a {
+    color: rgb(51, 47, 47) !important;
 }
 .post aside {
     display: flex;
@@ -126,6 +134,7 @@ section.meta a {
     border-top: 0.2rem solid #92c4d1;
     text-align: center;
     line-height: 2rem;
+    color: rgb(51, 47, 47) !important;
 }
 .like-label {
     padding-left: 5px;
