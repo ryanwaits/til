@@ -10,4 +10,8 @@ module LikesHelper
         return my_posts_ids.include?(params[:post_id].to_i)
 
     end
+
+    def already_liked?(post)
+        post.author.likes.find_by_post_id(post)
+    end
 end
