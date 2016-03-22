@@ -4,48 +4,25 @@
             <a href="#">Stats</a>
         </h1>
     </div>
-    <section class="meta">
-        <ul>
-            <% if logged_in?(@author) %>
-            <li>
-                <%= link_to '<i class="fa fa-home"></i>'.html_safe, root_path %>
-            </li>
-            <li>
-                <%= link_to '<i class="fa fa-user"></i>'.html_safe, author_path(@author) %>
-            </li>
-            <li>
-                <%= link_to '<i class="fa fa-bar-chart"></i>'.html_safe, stats_path, class: 'stats' %>
-            </li>
-            <li>
-                <a href=""><i class="fa fa-search"></i></a>
-            </li>
-            <li>
-                <a href=""><%= link_to '<i class="fa fa-plus"></i>'.html_safe, new_post_path %></a>
-            </li>
-            <li>
-                <%= link_to '<i class="fa fa-sign-out"></i>'.html_safe, logout_path, method: :delete %>
-            </li>
-            <% else %>
-                <li>
-                    <%= link_to '<i class="fa fa-home"></i>'.html_safe, root_path %>
-                </li>
-                <li>
-                    <%= link_to '<i class="fa fa-user"></i>'.html_safe, login_path %>
-                </li>
-                <li>
-                    <%= link_to '<i class="fa fa-bar-chart"></i>'.html_safe, stats_path, class: 'stats' %>
-                </li>
-                <li>
-                    <a href=""><i class="fa fa-search"></i></a>
-                </li>
-            <% end %>
-        </ul>
-    </section>
+    <%= render './home/meta' %>
 </header>
 <section id="home">
     <article class="post">
         <section>
-        <h2 class="stats-liked">Liked Posts</h2>
+        <h2 class="stats-liked">Like Count for All Posts</h2>
+        <% if build_all_posts_graph%>
+            <div class="post-content">
+             <%= bar_chart @data, @options %>     
+            </div>
+        <% end %>
+        </section>
+    </article>
+</section>
+
+<section id="home">
+    <article class="post">
+        <section>
+        <h2 class="stats-liked">My Like Count</h2>
         <% if build_posts_graph(session[:author_id])%>
             <div class="post-content">
              <%= bar_chart @data, @options %>     
@@ -60,6 +37,19 @@
         <section>
         <h2 class="stats-hashtag">Most Used Hashtags</h2>
         <% if build_hashtags_graph %>
+            <div class="post-content">
+             <%= bar_chart @data, @options %>    
+            </div>
+        <% end %>
+        </section>
+    </article>
+</section>
+
+<section id="home">
+    <article class="post">
+        <section>
+        <h2 class="stats-per-day">Posts by Day</h2>
+        <% if build_posts_per_day_graph %>
             <div class="post-content">
              <%= bar_chart @data, @options %>    
             </div>
