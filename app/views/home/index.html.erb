@@ -28,15 +28,17 @@
                 <aside>
                 <ul>
                 <li>
-                <a class="hashtag" href="/?hashtag=<%= post.hashtag %>">#<%= post.hashtag %></a>
+                    <a class="hashtag" href="/?hashtag=<%= post.hashtag %>">#<%= post.hashtag %></a>
                 </li>
                 <li>
-                <a class="save" target="_blank" href="#">download
-                </a></li>
+                    <a class="save" target="_blank" href="#">download
+                    </a>
+                </li>
                 <li>
-                <a class="js-like-action post__like-link" data-id="<%= post.id %>" href="#"><i class="fa fa-heart-o"></i>
-                <span class="like-label"><%= post.liking_authors.count %></span>
-                </a></li>
+                    <a class="js-like-action post__like-link" data-id="<%= post.id %>" href="#"><i class="fa fa-heart-o"></i>
+                    <span class="like-label"><%= post.liking_authors.count %></span>
+                    </a>
+                </li>
                 </ul>
                 </aside>
             </section>
