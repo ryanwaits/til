@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   post '/like' => 'likes#create'
+  get '/hashtag' => 'home#index'
 
   get '/stats' => 'stats#index'
 
