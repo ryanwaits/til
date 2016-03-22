@@ -25,6 +25,13 @@ $(function(){
         $('.message').remove();
       }, 3000);
 
+    $('#post_hashtag').on('keypress', function(e){
+        console.log(e.which);
+        if (e.keyCode === 35 || e.keyCode === 32){
+            e.preventDefault();
+        }
+    })
+
     // post a like
     current_like = 0;
     $('.js-like-action').on('click', function(e){
