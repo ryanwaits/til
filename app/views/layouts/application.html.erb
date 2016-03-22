@@ -21,6 +21,9 @@
 <% if flash[:account] %>
     <div class="ui compact message"><%= flash[:account] %></div>
 <% end %>
+<% if flash[:like] %>
+    <div class="ui compact message"><%= flash[:like] %></div>
+<% end %>
 <%= yield %>
 
 </body>
