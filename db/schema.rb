@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160321162159) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "authors", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
@@ -28,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160321162159) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "likes", ["author_id"], name: "index_likes_on_author_id"
-  add_index "likes", ["post_id"], name: "index_likes_on_post_id"
+  add_index "likes", ["author_id"], name: "index_likes_on_author_id", using: :btree
+  add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -40,7 +43,10 @@ ActiveRecord::Schema.define(version: 20160321162159) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "posts", ["author_id"], name: "index_posts_on_author_id"
-  add_index "posts", ["hashtag"], name: "index_posts_on_hashtag"
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
+  add_index "posts", ["hashtag"], name: "index_posts_on_hashtag", using: :btree
 
+  add_foreign_key "likes", "authors"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "posts", "authors"
 end
