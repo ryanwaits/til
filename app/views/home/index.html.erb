@@ -2,7 +2,7 @@
     <header class="site-head">
         <div>
             <h1>
-                <a href="#">Today I Learned</a>
+                <a href="#">Today I Learned <%= @hashtag %></a>
             </h1>
         </div>
         <%= render 'meta' %>
@@ -10,7 +10,7 @@
 
     <section id="home">
         <article class="post">
-        <% @posts.each do |post| %>
+        <% @posts.reverse.each do |post| %>
             <section>
                 <div class="post-content">
                     <h1>
@@ -28,10 +28,10 @@
                 <aside>
                 <ul>
                 <li>
-                <a class="hashtag" href="#"><%= post.hashtag %></a>
+                <a class="hashtag" href="/?hashtag=<%= post.hashtag %>">#<%= post.hashtag %></a>
                 </li>
                 <li>
-                <a class="save" target="_blank" href="#">save
+                <a class="save" target="_blank" href="#">download
                 </a></li>
                 <li>
                 <a class="js-like-action post__like-link" data-id="<%= post.id %>" href="#"><i class="fa fa-heart-o"></i>
