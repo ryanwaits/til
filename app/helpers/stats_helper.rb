@@ -61,16 +61,16 @@ module StatsHelper
     end
 
     def build_hashtags_graph
-        counts = Hash.new(0)
+        @counts = Hash.new(0)
         hashtags = []
         @posts = Post.all
         @posts.each do |post|
             hashtags.push(post.hashtag)
         end
-        hashtags.each { |hash| counts[hash] += 1 }
+        hashtags.each { |hash| @counts[hash] += 1 }
         
         @data = {
-            labels: counts.keys,
+            labels: @counts.keys,
             datasets: [
                 {
                     label: "My First dataset",
@@ -80,7 +80,7 @@ module StatsHelper
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: counts.values
+                    data: @counts.values
                 }
             ]
         }

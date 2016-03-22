@@ -9,7 +9,7 @@
 <section id="home">
     <article class="post">
         <section>
-        <h2 class="stats-liked">Like Count for All Posts</h2>
+        <h2 class="stats-liked">Most Liked TIL's</h2>
         <% if build_all_posts_graph%>
             <div class="post-content">
              <%= bar_chart @data, @options %>     
@@ -22,7 +22,7 @@
 <section id="home">
     <article class="post">
         <section>
-        <h2 class="stats-liked">My Like Count</h2>
+        <h2 class="stats-liked">My Liked TIL's</h2>
         <% if build_posts_graph(session[:author_id])%>
             <div class="post-content">
              <%= bar_chart @data, @options %>     
@@ -35,7 +35,7 @@
 <section id="home">
     <article class="post">
         <section>
-        <h2 class="stats-hashtag">Most Used Hashtags</h2>
+        <h2 class="stats-hashtag"><%= NumbersInWords.in_words(@posts.count).capitalize %> Posts in <%= @counts.keys.count %> Channels</h2>
         <% if build_hashtags_graph %>
             <div class="post-content">
              <%= bar_chart @data, @options %>    

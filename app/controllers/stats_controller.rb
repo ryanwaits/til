@@ -6,6 +6,7 @@ class StatsController < ApplicationController
     if @author
         build_posts_graph(session[:author_id])
         build_hashtags_graph
+        @posts = Post.all
     else
         flash[:access] = "You must be logged in to see your stats."
         redirect_to login_path
