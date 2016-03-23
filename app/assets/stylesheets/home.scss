@@ -12,6 +12,11 @@ body {
     font-weight: 400;
     font-size: 14px;
 }
+span img {
+    width: 8.5%;
+    // position: relative;
+    // left: 35%;
+}
 a {
     text-decoration: none;
     font-size: 1.25em;
@@ -73,7 +78,7 @@ section.meta a {
     font-size: 2vw;
 }
 .post {
-    margin-top: 20%;
+    margin-top: 25%;
 }
 .post section {
     -webkit-box-flex: 0;
