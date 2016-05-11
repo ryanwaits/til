@@ -1,6 +1,7 @@
 class AuthorsController < ApplicationController
-    before_action :set_author, only: [:edit, :show]
     include AuthorsHelper
+    before_action :set_author, only: [:edit, :show]
+
   def new
     @author = Author.new
   end
